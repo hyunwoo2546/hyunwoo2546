@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hyun.mapper.BoardMapper">
+
+	<insert id="enroll">
+		insert into SPRING_BOARD(bno,title,content,writer)
+		values (seq_board.nextval,#{title},#{content},#{writer})
+	</insert>
+	
+</mapper>

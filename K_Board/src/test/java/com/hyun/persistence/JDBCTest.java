@@ -21,7 +21,7 @@ public class JDBCTest {
 	public void testConnection() {
 		try (Connection con = DriverManager.getConnection(
 				"jdbc:oracle:thin:@localhost:1521:xe",
-				"K_DB",
+				"SPRING_BOARD",
 				"gus31216")){
 			System.out.println(con);
 		} catch (Exception e) {
