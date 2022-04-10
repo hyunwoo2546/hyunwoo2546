@@ -1,5 +1,7 @@
 package com.hyun.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +16,12 @@ public class BoardServiceImpl implements BoardService{
 	
 	@Override
 	public void enroll(BoardVO vo) {
-
 		mapper.enroll(vo);
-		
+	}
+	
+	@Override
+	public List<BoardVO> getList() {
+		return mapper.getList();
 	}
 	
 }

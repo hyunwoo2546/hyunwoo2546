@@ -2,6 +2,7 @@ package com.hyun.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,12 +24,6 @@ public class BoardController {
 	@Autowired
 	private BoardService service;
 	
-	/* # 목록페이지 */
-	@GetMapping("/list")
-	public void boardListGET() {
-		log.info("게시판 목록 페이지");
-	}
-	
 	/* # 게시판 등록 페이지 GET */
 	//@GetMapping("/enroll")
 	@RequestMapping(value = "/enroll", method = RequestMethod.GET)
@@ -47,6 +42,13 @@ public class BoardController {
 		rttr.addFlashAttribute("result","enroll success");
 		
 		return "redirect:/board/list";
+	}
+	
+	/* # 게시판 목록 페이지 접속 */
+	@GetMapping("/list")
+	public void boardListGet(Model model) {
+		log.info("게시판 목록 페이지 진입");
+		model.addAttribute("list", service.getList());
 	}
 
 }

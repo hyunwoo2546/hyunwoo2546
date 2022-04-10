@@ -9,4 +9,8 @@
 		values (seq_board.nextval,#{title},#{content},#{writer})
 	</insert>
 	
+	<select id="getList" resultType="com.hyun.domain.BoardVO">
+		SELECT * FROM SPRING_BOARD
+	</select>
+	
 </mapper>
