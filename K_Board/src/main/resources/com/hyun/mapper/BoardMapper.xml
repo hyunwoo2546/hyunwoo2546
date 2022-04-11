@@ -13,4 +13,8 @@
 		SELECT * FROM SPRING_BOARD
 	</select>
 	
+	<select id="getPage" resultType="com.hyun.domain.BoardVO">
+		SELECT * FROM SPRING_BOARD WHERE BNO = #{BNO}
+	</select>
+	
 </mapper>

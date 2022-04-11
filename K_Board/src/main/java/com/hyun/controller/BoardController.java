@@ -50,5 +50,11 @@ public class BoardController {
 		log.info("게시판 목록 페이지 진입");
 		model.addAttribute("list", service.getList());
 	}
+	
+	/* # 게시판 게시물 조회 */
+	@GetMapping("/get")
+	public void boardGetPageGET(int bno, Model model) {
+		model.addAttribute("pageInfo", service.getPage(bno));
+	}
 
 }

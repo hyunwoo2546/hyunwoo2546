@@ -51,5 +51,12 @@ public class BoardMapperTests {
 		service.getList().forEach(board -> log.info("" + board));
 		
 	}
+	
+	@Test
+	public void testGetPage() {
+		int bno = 21;
+		
+		log.info("" + service.getPage(bno));
+	}
 
  }

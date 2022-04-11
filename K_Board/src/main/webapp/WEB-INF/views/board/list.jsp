@@ -29,20 +29,22 @@
 		<c:forEach items="${list}" var="list">
 			<tr>
 				<td><c:out value="${list.bno}" /></td>
-				<td><c:out value="${list.title}" /></td>
+				<td>
+					<a class="move" href='/board/get?bno=<c:out value="${list.bno}"/>'>
+						<c:out value="${list.title}" />
+					</a>
+				</td>
 				<td><c:out value="${list.writer}" /></td>
 				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.regdate}"/></td>
 				<td><fmt:formatDate pattern="yyyy/MM/dd" value="${list.updateDate}"/></td>
 			</tr>
 		</c:forEach>
 	</table>
+	<form id="moveForm" method="get">
+	</form>
 </div>
 
-
-
-
-
-
+<!-- * 자바스크립트 -->
 <script type="text/javascript">
 	$(document).ready(function () {
 		let result = "${result}";
@@ -58,6 +60,7 @@
 			}
 		}
 	});
+	
 </script>
 </body>
 </html>

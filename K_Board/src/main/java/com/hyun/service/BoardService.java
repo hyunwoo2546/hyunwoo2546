@@ -9,6 +9,10 @@ public interface BoardService {
 	/* # 게시판 등록 */
 	public void enroll(BoardVO vo);
 	
+	/* # 게시판 목록 페이지 */
 	public List<BoardVO> getList();
+	
+	/* # 게시판 조회 */
+	public BoardVO getPage(int bno);
 	
 }
