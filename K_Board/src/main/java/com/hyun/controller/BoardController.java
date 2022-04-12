@@ -56,5 +56,19 @@ public class BoardController {
 	public void boardGetPageGET(int bno, Model model) {
 		model.addAttribute("pageInfo", service.getPage(bno));
 	}
-
+	
+	/* # 수정 페이지 이동 */
+	@GetMapping("/modify")
+	public void boardModifyGET(int bno, Model model) {
+		model.addAttribute("pageInfo", service.getPage(bno));
+	}
+	
+	/* # 게시물 수정 */
+	@PostMapping("/modify")
+	public String boardModifyPOST(BoardVO vo, RedirectAttributes rttr) {
+		service.modify(vo);
+		rttr.addFlashAttribute("result", "modify success");
+		
+		return "redirect:/board/list";
+	}
 }

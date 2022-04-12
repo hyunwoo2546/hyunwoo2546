@@ -1,6 +1,5 @@
 package com.hyun.mapper;
 
-import java.util.List;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -58,5 +57,18 @@ public class BoardMapperTests {
 		
 		log.info("" + service.getPage(bno));
 	}
+	
+	@Test
+	public void testModify() {
+		BoardVO vo = new BoardVO();
+		vo.setBno(21);
+		vo.setTitle("수정22");
+		vo.setContent("수정22");
+		
+		int result = service.modify(vo);
+		log.info("result : " + result);
+	}
+	
+	
 
  }

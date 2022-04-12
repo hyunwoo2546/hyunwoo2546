@@ -32,4 +32,10 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.getPage(bno);
 	}
 	
+	/* # 게시물 수정 */
+	@Override
+	public int modify(BoardVO vo) {
+		return mapper.modify(vo);
+	}
+	
 }
