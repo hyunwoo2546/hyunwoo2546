@@ -27,4 +27,10 @@
 		WHERE bno = #{bno} 
 	</update>
 	
+	<!-- # 게시물 삭제 -->
+	<delete id="delete">
+		DELETE FROM SPRING_BOARD
+		WHERE bno = #{bno}
+	</delete>
+	
 </mapper>

@@ -38,4 +38,10 @@ public class BoardServiceImpl implements BoardService{
 		return mapper.modify(vo);
 	}
 	
+	/* # 게시물 삭제 */
+	@Override
+	public int delete(int bno) {
+		return mapper.delete(bno);
+	}
+	
 }
